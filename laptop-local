@@ -11,6 +11,7 @@ brew bundle --file=- <<EOF
   cask "keybase"
   cask "ngrok"
   cask "spotify"
+  cask "pycharm-ce"
 
   # for dotfiles
   tap "thoughtbot/formulae"

@@ -181,12 +181,22 @@ install_asdf_language() {
   fi
 }
 
+setup_python_tools(){
+  pip install --upgrade pip
+  pip install virtualenv
+  pip install virtualenvwrapper
+}
+
 fancy_echo "Installing latest Node ..."
 bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs"
 
 fancy_echo "Installing latest Python ..."
 install_asdf_language "python"
+setup_python_tools
+
+fancy_echo "Calling setup script for laptop-local ..."
+sh setup
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
