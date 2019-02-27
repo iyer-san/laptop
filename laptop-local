@@ -24,6 +24,7 @@ brew bundle --file=- <<EOF
   brew "ttygif"
   brew "tree"
   brew "shellcheck"
+  brew "circleci"
 EOF
 
 # bring in or pull from Thoughtbot's dotfiles
