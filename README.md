@@ -91,12 +91,6 @@ Unix tools:
 [Watchman]: https://facebook.github.io/watchman/
 [Zsh]: http://www.zsh.org/
 
-Heroku tools:
-
-* [Heroku CLI] and [Parity] for interacting with the Heroku API
-
-[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
-[Parity]: https://github.com/thoughtbot/parity
 
 GitHub tools:
 
@@ -104,14 +98,12 @@ GitHub tools:
 
 [Hub]: http://hub.github.com/
 
-Image tools:
-
-* [ImageMagick] for cropping and resizing images
 
 Programming languages, package managers, and configuration:
 
 * [ASDF] for managing programming language versions
 * [Bundler] for managing Ruby libraries
+* [Python] go to language for scripting
 * [Node.js] and [NPM], for running apps and installing JavaScript packages
 * [Ruby] stable for writing general-purpose code
 * [Yarn] for managing JavaScript packages

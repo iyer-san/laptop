@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "source $HOME/workspace/laptop/laptop-local" > $HOME/.laptop.local

@@ -1,0 +1,45 @@
+#!/bin/sh
+
+fancy_echo "------- Setting Up Applications, dependencies, and dotfiles -------"
+
+fancy_echo "------- Some dependencies not managed with laptop -----------------"
+fancy_echo " * Sound Siphon"
+
+# homebrew installations
+brew bundle --file=- <<EOF
+  cask "iterm2"
+  cask "keybase"
+  cask "ngrok"
+  cask "spotify"
+
+  # for dotfiles
+  tap "thoughtbot/formulae"
+  brew "rcm"
+  brew "jq"
+  brew "go"
+  brew "terraform"
+  brew "awscli"
+  brew "graphviz"
+  cask "docker"
+  brew "ttygif"
+  brew "tree"
+  brew "shellcheck"
+EOF
+
+# bring in or pull from Thoughtbot's dotfiles
+if [ ! -d "$HOME/dotfiles" ]; then
+  git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
+else
+  git -C ~/dotfiles pull origin master
+fi
+
+# brings in my personal dotfile prefernces
+# and keeps them current
+if [ ! -d "$HOME/dotfiles" ]; then
+  git clone git@github.com:iyer-san/dotfiles-local.git ~/dotfiles-local
+else
+  git -C ~/dotfiles-local pull origin master
+fi
+
+# source dotfiles
+env RCRC=$HOME/dotfiles/rcrc rcup
