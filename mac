@@ -185,6 +185,7 @@ setup_python_tools(){
   pip install --upgrade pip
   pip install virtualenv
   pip install virtualenvwrapper
+  asdf reshim python
 }
 
 fancy_echo "Installing latest Node ..."

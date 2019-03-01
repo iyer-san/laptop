@@ -43,5 +43,15 @@ else
   git -C ~/dotfiles-local pull origin master
 fi
 
+# install zgen for zsh
+if [ ! -d "$HOME/dotfiles/.zgen" ]; then
+  git clone https://github.com/tarjoilija/zgen.git "$HOME/dotfiles/.zgen"
+fi
+
+# install antigen for zsh
+if [ ! -d "$HOME/dotfiles/antigen.zsh" ]; then
+  curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
+fi
+
 # source dotfiles
 env RCRC=$HOME/dotfiles/rcrc rcup
