@@ -26,6 +26,7 @@ brew bundle --file=- <<EOF
   brew "tree"
   brew "shellcheck"
   brew "circleci"
+  brew "wget"
 EOF
 
 # bring in or pull from Thoughtbot's dotfiles
@@ -44,13 +45,13 @@ else
 fi
 
 # install zgen for zsh
-if [ ! -d "$HOME/dotfiles/.zgen" ]; then
-  git clone https://github.com/tarjoilija/zgen.git "$HOME/dotfiles/.zgen"
+if [ ! -d "$HOME/dotfiles-local/.zgen" ]; then
+  git clone https://github.com/tarjoilija/zgen.git "$HOME/dotfiles-local/.zgen"
 fi
 
 # install antigen for zsh
-if [ ! -d "$HOME/dotfiles/antigen.zsh" ]; then
-  curl -L git.io/antigen > $HOME/dotfiles/antigen.zsh
+if [ ! -d "$HOME/dotfiles-local/antigen.zsh" ]; then
+  curl -L git.io/antigen > $HOME/dotfiles-local/antigen.zsh
 fi
 
 # source dotfiles
